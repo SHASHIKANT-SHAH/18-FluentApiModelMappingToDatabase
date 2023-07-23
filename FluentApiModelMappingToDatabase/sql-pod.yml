@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql-pod
+  labels:
+    name: mssql
+spec:
+  containers:
+  - name: mssql-container
+    image: mcr.microsoft.com/mssql/server:2019-CU14-ubuntu-20.04
+    resources:
+    ports:
+      - containerPort: 1433
+    env:
+      - name: ACCEPT_EULA
+        value: "Y"
+      - name: MSSQL_SA_PASSWORD
+        value: "yourStrong(!)Password"
+    
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name:  mssql-service
+spec:
+  selector:
+    name:  mssql
+  type:  NodePort
+  ports:
+  - name:  name-of-the-port
+    port:  1433
+    nodePort:  31433

@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  fluentapimodelmappingtodatabase:
+    image: ${DOCKER_REGISTRY-}fluentapimodelmappingtodatabase
+    build:
+      context: .
+      dockerfile: FluentApiModelMappingToDatabase/Dockerfile

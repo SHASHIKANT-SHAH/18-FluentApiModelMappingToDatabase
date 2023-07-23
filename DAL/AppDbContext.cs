@@ -19,8 +19,8 @@ namespace DAL
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=localhost, 5020;Initial Catalog=FluentApi;Persist Security Info=True;User Id=sa;Password=yourStrong(!)Password;TrustServerCertificate=True;");
-                // optionsBuilder.UseSqlServer("Data Source=DESKTOP-K1T5VK8\\SQLEXPRESS;Initial Catalog=WebApiTest;Integrated Security=True; TrustServerCertificate=True");
+               optionsBuilder.UseSqlServer("Data Source=localhost, 5020;Initial Catalog=FluentApi;Persist Security Info=True;User Id=sa;Password=yourStrong(!)Password;TrustServerCertificate=True;");
+                //optionsBuilder.UseSqlServer("Data Source=localhost, 31433;Initial Catalog=FluentApi;Persist Security Info=True;User Id=sa;Password=yourStrong(!)Password;TrustServerCertificate=True;");
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
